@@ -1,12 +1,10 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using LeetCodeChallenges.RomanToInteger;
 
+using LeetCodeChallenges.Medium.LengthOfLongestSubstring;
 
 var solution = new Solution();
 
-Console.WriteLine(solution.RomanToInt("I"));
-
-Console.WriteLine(solution.RomanToInt("I"));
-Console.WriteLine(solution.RomanToInt("III"));
-Console.WriteLine(solution.RomanToInt("LVIII"));
-Console.WriteLine(solution.RomanToInt("MCMXCIV"));
+Console.WriteLine(solution.LengthOfLongestSubstring("abcabcbb"));
+Console.WriteLine(solution.LengthOfLongestSubstring("bbbbb"));
+Console.WriteLine(solution.LengthOfLongestSubstring("pwwkew"));
+Console.WriteLine(solution.LengthOfLongestSubstring("bbtablud"));
