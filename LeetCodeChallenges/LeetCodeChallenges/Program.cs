@@ -2,4 +2,4 @@
 using LeetCodeChallenges.Easy;
 using LeetCodeChallenges.Medium;
 
-MediumSolution.LongestPalindromeTest();
+EasySolution.IsValidParenthesesTests();

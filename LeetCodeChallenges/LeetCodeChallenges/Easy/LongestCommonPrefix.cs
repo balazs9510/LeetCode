@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LeetCodeChallenges.Easy
 {
-    public partial class Solution
+    public partial class EasySolution
     {
         public string LongestCommonPrefix(string[] strs)
         {
@@ -43,7 +43,7 @@ namespace LeetCodeChallenges.Easy
 
         public static void LongestCommonPrefixTest()
         {
-            var sol = new Solution();
+            var sol = new EasySolution();
             Console.WriteLine(sol.LongestCommonPrefix(new string[] { "flower", "flow", "flight" }));
             Console.WriteLine(sol.LongestCommonPrefix(new string[] { "dog", "racecar", "car" }));
         }
