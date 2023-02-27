@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LeetCodeChallenges.Easy
 {
-    public class Solution
+    public partial class Solution
     {
         public int MaxProductDifference(int[] nums)
         {

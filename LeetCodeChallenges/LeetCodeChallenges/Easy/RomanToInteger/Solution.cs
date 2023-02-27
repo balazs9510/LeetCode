@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LeetCodeChallenges.Easy.RomanToInteger
 {
-    public class Solution
+    public partial class Solution
     {
         Dictionary<char, int> Map = new Dictionary<char, int>
         {
