@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LeetCodeChallenges.Hard
 {
-    public class Solution
+    public partial class HardSolution
     {
         public double FindMedianSortedArrays(int[] nums1, int[] nums2)
         {
