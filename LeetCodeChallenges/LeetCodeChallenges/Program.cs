@@ -4,4 +4,5 @@ using LeetCodeChallenges.Hard;
 using LeetCodeChallenges.Medium;
 
 //EasySolution.IsValidParenthesesTests();
-HardSolution.IsMatchingRegularExpressionTests();
+MediumSolution.ZigZagConvertTests();
+//HardSolution.IsMatchingRegularExpressionTests();
