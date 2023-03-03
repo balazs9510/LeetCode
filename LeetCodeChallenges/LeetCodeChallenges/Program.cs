@@ -3,6 +3,6 @@ using LeetCodeChallenges.Easy;
 using LeetCodeChallenges.Hard;
 using LeetCodeChallenges.Medium;
 
-EasySolution.RemoveDuplicatesTests();
+EasySolution.RemoveElementTests();
 //MediumSolution.ZigZagConvertTests();
 //HardSolution.IsMatchingRegularExpressionTests();
