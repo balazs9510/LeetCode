@@ -26,6 +26,13 @@ namespace LeetCodeChallenges.Easy
 		{
 			
 		}
-
-	}
+        private static void WriteTestToConsole<T>(T expected, T actual)
+        {
+            Console.WriteLine($"Expected: {expected}; Actual: {actual}");
+            if (actual.ToString() != expected.ToString())
+            {
+                Console.Error.WriteLine("Not matching!");
+            }
+        }
+    }
 }
