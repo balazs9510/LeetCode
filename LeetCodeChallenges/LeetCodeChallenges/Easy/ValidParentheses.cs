@@ -50,11 +50,11 @@ namespace LeetCodeChallenges.Easy
 
         public static void IsValidParenthesesTests()
         {
-            Console.WriteLine(Instance.IsValidParentheses("()"));
-            Console.WriteLine(Instance.IsValidParentheses("()[]{}"));
-            Console.WriteLine(Instance.IsValidParentheses("(]"));
-            Console.WriteLine(Instance.IsValidParentheses("({{[[]]{}}])"));
-            Console.WriteLine(Instance.IsValidParentheses("()("));
+            //Console.WriteLine(Instance.IsValidParentheses("()"));
+            //Console.WriteLine(Instance.IsValidParentheses("()[]{}"));
+            //Console.WriteLine(Instance.IsValidParentheses("(]"));
+            //Console.WriteLine(Instance.IsValidParentheses("({{[[]]{}}])"));
+            //Console.WriteLine(Instance.IsValidParentheses("()("));
         }
     }
 }

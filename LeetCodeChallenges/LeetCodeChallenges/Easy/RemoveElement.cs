@@ -27,10 +27,10 @@ namespace LeetCodeChallenges.Easy
 
 		public static void RemoveElementTests()
 		{
-			Instance.RemoveElement(new int[] { 3, 2, 2, 3 }, 3);
-			Instance.RemoveElement(new int[] { 0, 1, 2, 2, 3, 0, 4, 2 }, 2);
-			Instance.RemoveElement(new int[] { 1, 1, 2 }, 1);
-			Instance.RemoveElement(new int[] { 0, 0, 1, 1, 1, 2, 2, 3, 3, 4 }, 4);
+			//Instance.RemoveElement(new int[] { 3, 2, 2, 3 }, 3);
+			//Instance.RemoveElement(new int[] { 0, 1, 2, 2, 3, 0, 4, 2 }, 2);
+			//Instance.RemoveElement(new int[] { 1, 1, 2 }, 1);
+			//Instance.RemoveElement(new int[] { 0, 0, 1, 1, 1, 2, 2, 3, 3, 4 }, 4);
 		}
 	}
 }

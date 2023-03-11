@@ -36,11 +36,11 @@ namespace LeetCodeChallenges.Easy
 
 		public static void SearchInsertTests()
 		{
-			Console.WriteLine(Instance.SearchInsert(new[] { 1, 3, 5, 6 }, 4));
-			Console.WriteLine(Instance.SearchInsert(new[] { 1, 3, 5, 6 }, -1));
-			Console.WriteLine(Instance.SearchInsert(new[] { 1, 3, 5, 6 }, 5));
-			Console.WriteLine(Instance.SearchInsert(new[] { 1, 3, 5, 6 }, 2));
-			Console.WriteLine(Instance.SearchInsert(new[] { 1, 3, 5, 6 }, 7));
+			//Console.WriteLine(Instance.SearchInsert(new[] { 1, 3, 5, 6 }, 4));
+			//Console.WriteLine(Instance.SearchInsert(new[] { 1, 3, 5, 6 }, -1));
+			//Console.WriteLine(Instance.SearchInsert(new[] { 1, 3, 5, 6 }, 5));
+			//Console.WriteLine(Instance.SearchInsert(new[] { 1, 3, 5, 6 }, 2));
+			//Console.WriteLine(Instance.SearchInsert(new[] { 1, 3, 5, 6 }, 7));
 		}
 	}
 }

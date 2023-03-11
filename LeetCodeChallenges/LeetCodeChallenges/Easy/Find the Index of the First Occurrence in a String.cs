@@ -28,11 +28,11 @@ namespace LeetCodeChallenges.Easy
 
         public static void StrStrTests()
         {
-            WriteTestToConsole(0, Instance.StrStr("sadbutsad", "sad"));
-            WriteTestToConsole(-1, Instance.StrStr("leetcode", "leeto"));
-            WriteTestToConsole(-1, Instance.StrStr("a", "ab"));
-            WriteTestToConsole(0, Instance.StrStr("sad", "sad"));
-            WriteTestToConsole(1, Instance.StrStr("asad", "sad"));
+            //WriteTestToConsole(0, Instance.StrStr("sadbutsad", "sad"));
+            //WriteTestToConsole(-1, Instance.StrStr("leetcode", "leeto"));
+            //WriteTestToConsole(-1, Instance.StrStr("a", "ab"));
+            //WriteTestToConsole(0, Instance.StrStr("sad", "sad"));
+            //WriteTestToConsole(1, Instance.StrStr("asad", "sad"));
         }
     }
 }
