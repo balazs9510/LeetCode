@@ -13,39 +13,20 @@ namespace LeetCodeChallenges.Easy
 
         public int ClimbStairs(int n)
         {
-            var memo = new int?[45];
-            return ClimbStairsRecursive(n, 0, memo);
-        }
+            if (n <= 3)
+                return n;
 
+            int[] trees = new int[n];
+            trees[0] = 1;
+            trees[1] = 2;
 
-        // TODO use memo and stairs left
-        private int ClimbStairsRecursive(int stairsLeft, int distinctWayCount, int?[] memo)
-        {
-            int[] steps = new int[] { 1, 2 };
-            foreach (int step in steps)
+            for (int i = 2; i < trees.Length; i++)
             {
-                if (step > stairsLeft) continue;
-
-                if (memo[stairsLeft - step] != null)
-                {
-                    distinctWayCount += memo[stairsLeft - step].Value;
-                }
-                else
-                {
-                    if (step < stairsLeft)
-                    {
-                        distinctWayCount = ClimbStairsRecursive(stairsLeft - step, distinctWayCount, memo);
-                    }
-                    else if (step == stairsLeft)
-                    {
-                        distinctWayCount++;
-                    }
-                }
-
+                //current tree, left tree right tree
+                trees[i] = trees[i - 1] + trees[i - 2];
             }
-            if (memo[stairsLeft] == null)
-                memo[stairsLeft] = distinctWayCount;
-            return distinctWayCount;
+
+            return trees[n - 1];
         }
 
         [Theory]
