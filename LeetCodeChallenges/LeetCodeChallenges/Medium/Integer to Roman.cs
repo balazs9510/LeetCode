@@ -9,73 +9,29 @@ namespace LeetCodeChallenges.Medium
 {
     public class Integer_to_Roman
     {
-        private Dictionary<int, string> _map = new Dictionary<int, string>
-        {
-            { 1000, "M"},
-            { 900, "CM"},
-            { 500,  "D"},
-            { 400,  "CD"},
-            { 100,  "C"},
-            { 90,  "XC"},
-            { 50,   "L"},
-            { 40,   "XL"},
-            { 10,   "X"},
-            { 9,   "IX"},
-            { 5,    "V"},
-            { 4,    "IV"},
-            { 1,    "I"},
-        };
-
         public string IntToRoman(int num)
         {
-            var sb = new StringBuilder();
-
-            var thousand = num / 1000;
-            if (thousand > 0)
+            string retval = "";
+            int[] compVals = new int[] { 1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1 };
+            string[] symbol = new string[] { "M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I" };
+            int compare = 0;
+            while (num > 0)
             {
-                for (int i = 0; i < thousand; i++)
+                while (num < compVals[compare])
                 {
-                    sb.Append(_map[1000]);
+                    compare++;
+                    if (compare > compVals.Length)
+                        break;
                 }
-                num = num - thousand * 1000;
+                num -= compVals[compare];
+                retval += symbol[compare];
+
             }
-
-            num = hack(num, 100, sb);
-            num = hack(num, 10, sb);
-            num = hack(num, 1, sb);
-
-            return sb.ToString();
+            return retval;
         }
 
-      
-        private int hack(int num, int ten, StringBuilder sb)
-        {
-            var hundred = num / ten;
-            if (hundred > 0)
-            {
-                if (hundred == 9 || hundred == 4)
-                {
-                    sb.Append(_map[hundred * ten]);
-                }
-                else if (hundred >= 5 && hundred <= 8)
-                {
-                    sb.Append(_map[5 * ten]);
-                    for (int i = 0; i < hundred - 5; i++)
-                    {
-                        sb.Append(_map[ten]);
-                    }
-                }
-                else
-                {
-                    for (int i = 0; i < hundred; i++)
-                    {
-                        sb.Append(_map[ten]);
-                    }
-                }
-                num = num - hundred * ten;
-            }
-            return num;
-        }
+
+
 
         [Theory]
         [InlineData(3, "III")]
