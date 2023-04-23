@@ -9,7 +9,7 @@ namespace LeetCodeChallenges.Medium
 {
     public class Container_With_Most_Water
     {
-        // Fastest implementation: increase left pointer if left < rigth else decrease left pointer
+        // Fastest implementation: increase left pointer if left < rigth else decrease left pointer, calculate max
         public int MaxArea(int[] height)
         {
             var max = 0;
