@@ -21,14 +21,47 @@ namespace LeetCodeChallenges.Medium
     }
     public class Binary_Tree_Level_Order_Traversal
     {
+        public class LeveledNode
+        {
+            public TreeNode Node { get; set; }
+            public int Level { get; set; }
+        }
         public IList<IList<int>> LevelOrder(TreeNode root)
         {
-            var result = new Dictionary<int, List<int>>();
-            RecursiveTravelsar(root, 0, result);
+            //var result = new Dictionary<int, List<int>>();
+            //RecursiveTravelsar(root, 0, result);
 
-            var list = result.ToArray().Select(x => x.Value).ToArray();
-            return list;
+            //var list = result.ToArray().Select(x => x.Value).ToArray();
+            //return list;
+
+            // BFS solution
+            var result = new List<IList<int>>();
+            var levelNodes = new List<int>();
+            var queue = new Queue<LeveledNode> ();
+            queue.Enqueue(new LeveledNode { Node = root, Level = 0 });
+            var level = 0;
+            while (queue.Count > 0)
+            {
+                var current = queue.Dequeue();
+                if (current.Level != level && levelNodes.Count > 0)
+                {
+                    result.Add(levelNodes.ToArray());
+                    levelNodes = new List<int>();
+                }
+
+                level = current.Level;
+                if (current.Node is not null)
+                {
+                    levelNodes.Add(current.Node.val);
+                    queue.Enqueue(new LeveledNode { Level = current.Level + 1, Node = current.Node.left});
+                    queue.Enqueue(new LeveledNode { Level = current.Level + 1, Node = current.Node.right });
+                }
+            }
+
+            return result;
         }
+
+
 
         private void RecursiveTravelsar(TreeNode node, int depth, Dictionary<int, List<int>> values)
         {
