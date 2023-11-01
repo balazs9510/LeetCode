@@ -9,26 +9,28 @@ namespace LeetCodeChallenges.Medium
 {
     public class _3Sum_Closest
     {
+        // UNFINISHED search
         public int ThreeSumClosest(int[] nums, int target)
         {
+            Array.Sort(nums);
             var count = nums.Length;
             var closestSumToTarget = 0;
             var distFromTarget = int.MaxValue;
             for (var i = 0; i < count - 2; i++)
             {
-                var first = nums[i];
-                for (var j = i + 1; j < count - 1; j++)
+                var left = i + 1; var right = count - 1;
+                while (left < right)
                 {
-                    var second = nums[j];
-                    for (var k = j + 1; k < count; k++)
+                    var currentSum = nums[i] + nums[left] + nums[right];
+                    var currentDist = Math.Abs(currentSum - target);
+                    if (currentDist < distFromTarget)
                     {
-                        var third = nums[k];
-                        var currentSum = first + second + third;
-                        if (Math.Abs(target - currentSum) < distFromTarget)
-                        {
-                            distFromTarget = Math.Abs(target - currentSum);
-                            closestSumToTarget = currentSum;
-                        }
+                        closestSumToTarget = currentSum;
+                    }
+
+                    if (currentDist > distFromTarget)
+                    {
+
                     }
                 }
             }
