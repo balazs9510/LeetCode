@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xunit;
+﻿using Xunit;
 
 namespace LeetCodeChallenges.Easy
 {
@@ -39,7 +34,7 @@ namespace LeetCodeChallenges.Easy
             // Arrange
             var p = new TreeNode(1, new TreeNode(2), new TreeNode(3));
             var q = new TreeNode(1, new TreeNode(2), new TreeNode(3));
-            
+
             // Act
             var result = IsSameTree(p, q);
 

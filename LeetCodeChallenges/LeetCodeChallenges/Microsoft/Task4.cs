@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xunit;
+﻿using Xunit;
 
 namespace LeetCodeChallenges.Microsoft
 {
@@ -32,14 +27,14 @@ namespace LeetCodeChallenges.Microsoft
                 return GetIntValue(Board, visited);
             }
 
-            if (currentIndex.Item1 < 0 || currentIndex.Item1 > Board.Length -1) return 0;
+            if (currentIndex.Item1 < 0 || currentIndex.Item1 > Board.Length - 1) return 0;
             if (currentIndex.Item2 < 0 || currentIndex.Item2 > Board[0].Length - 1) return 0;
             if (visited.Contains(currentIndex)) return 0;
             visited.Add(currentIndex);
             var max = 0;
             foreach (var neigh in neighsMap)
             {
-               var res =  GetLongestPathRec(Board, (currentIndex.Item1 - neigh[0], currentIndex.Item2 - neigh[1]), new List<(int, int)>(visited));
+                var res = GetLongestPathRec(Board, (currentIndex.Item1 - neigh[0], currentIndex.Item2 - neigh[1]), new List<(int, int)>(visited));
                 if (res > max) max = res;
             }
             return max;

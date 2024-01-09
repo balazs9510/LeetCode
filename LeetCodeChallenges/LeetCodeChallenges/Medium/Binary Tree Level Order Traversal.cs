@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xunit;
+﻿using Xunit;
 
 namespace LeetCodeChallenges.Medium
 {
@@ -37,7 +32,7 @@ namespace LeetCodeChallenges.Medium
             // BFS solution
             var result = new List<IList<int>>();
             var levelNodes = new List<int>();
-            var queue = new Queue<LeveledNode> ();
+            var queue = new Queue<LeveledNode>();
             queue.Enqueue(new LeveledNode { Node = root, Level = 0 });
             var level = 0;
             while (queue.Count > 0)
@@ -53,7 +48,7 @@ namespace LeetCodeChallenges.Medium
                 if (current.Node is not null)
                 {
                     levelNodes.Add(current.Node.val);
-                    queue.Enqueue(new LeveledNode { Level = current.Level + 1, Node = current.Node.left});
+                    queue.Enqueue(new LeveledNode { Level = current.Level + 1, Node = current.Node.left });
                     queue.Enqueue(new LeveledNode { Level = current.Level + 1, Node = current.Node.right });
                 }
             }
@@ -88,7 +83,7 @@ namespace LeetCodeChallenges.Medium
             {
                 val = 3,
                 left = new TreeNode(9),
-                right= new TreeNode
+                right = new TreeNode
                 {
                     val = 20,
                     left = new TreeNode(15),

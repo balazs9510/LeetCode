@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xunit;
+﻿using Xunit;
 
 namespace LeetCodeChallenges.Microsoft
 {
@@ -33,14 +28,14 @@ namespace LeetCodeChallenges.Microsoft
                     count++;
                 }
             }
-            
+
             return count;
         }
 
         [Theory]
         [InlineData(new int[] { 4, 2, 5, 8, 7, 3, 7 }, 2)]
         [InlineData(new int[] { 14, 21, 16, 35, 22 }, 1)]
-        [InlineData(new int[] { 5,5,5,5,5,5 }, 3)]
+        [InlineData(new int[] { 5, 5, 5, 5, 5, 5 }, 3)]
         public void Task1Tests(int[] A, int expected)
         {
             // Arrange act

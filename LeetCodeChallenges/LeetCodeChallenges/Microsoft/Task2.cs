@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xunit;
+﻿using Xunit;
 
 namespace LeetCodeChallenges.Microsoft
 {
@@ -35,7 +30,7 @@ namespace LeetCodeChallenges.Microsoft
             for (int i = allSum; i >= 0; i--)
             {
                 currentSum += count[i];
-                minChanges = Math.Min(minChanges, Math.Abs(allSum -2 * currentSum));
+                minChanges = Math.Min(minChanges, Math.Abs(allSum - 2 * currentSum));
             }
             return minChanges;
         }

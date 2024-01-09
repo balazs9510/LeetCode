@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xunit;
+﻿using Xunit;
 
 namespace LeetCodeChallenges.Medium
 {
@@ -37,7 +32,7 @@ namespace LeetCodeChallenges.Medium
         {
             if (node == null) return null;
             if (node.neighbors.Count == 0) return new Node(node.val);
-            var pairs = new Dictionary <int, Node>();
+            var pairs = new Dictionary<int, Node>();
 
             var queue = new Queue<Node>();
             queue.Enqueue(node);

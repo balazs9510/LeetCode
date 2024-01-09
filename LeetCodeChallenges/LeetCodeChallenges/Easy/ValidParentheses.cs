@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LeetCodeChallenges.Easy
+﻿namespace LeetCodeChallenges.Easy
 {
     public partial class EasySolution
     {
@@ -21,7 +15,7 @@ namespace LeetCodeChallenges.Easy
                 else
                 {
                     if (stack.Count == 0) return false;
-                    char toCheck  = stack.Pop();
+                    char toCheck = stack.Pop();
                     if (GetClosing(toCheck) != current)
                     {
                         return false;

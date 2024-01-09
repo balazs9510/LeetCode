@@ -18,9 +18,9 @@ namespace GFG.Practice.Arrays
 
 
         [Theory]
-        [InlineData(new int[] { 1,2,3,4}, 2, 1)]
-        [InlineData(new int[] { 1,2,3,4}, 3, 2)]
-        [InlineData(new int[] { 1,2,3,4}, 10, -1)]
+        [InlineData(new int[] { 1, 2, 3, 4 }, 2, 1)]
+        [InlineData(new int[] { 1, 2, 3, 4 }, 3, 2)]
+        [InlineData(new int[] { 1, 2, 3, 4 }, 10, -1)]
         public void LinearSearchTest(int[] array, int value, int expectedIndex)
         {
             // Arrange

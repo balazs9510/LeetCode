@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xunit;
+﻿using Xunit;
 
 namespace LeetCodeChallenges.Easy
 {
@@ -18,7 +13,7 @@ namespace LeetCodeChallenges.Easy
             {
                 while (!char.IsLetterOrDigit(s[start])) { start++; if (start > s.Length - 1 || end < 0) return true; }
                 while (!char.IsLetterOrDigit(s[end])) { end--; if (start > s.Length - 1 || end < 0) return true; }
-               
+
                 if (s[start] != s[end]) return false;
                 start++;
                 end--;

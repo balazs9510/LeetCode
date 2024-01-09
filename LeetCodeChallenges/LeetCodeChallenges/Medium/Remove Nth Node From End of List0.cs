@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xunit;
-using static LeetCodeChallenges.Easy.Remove_Duplicates_from_Sorted_List;
+﻿using Xunit;
 
 namespace LeetCodeChallenges.Medium
 {
@@ -27,7 +21,7 @@ namespace LeetCodeChallenges.Medium
             var index = 0;
             var iterator = head;
             var dict = new Dictionary<int, ListNode>();
-            while(iterator != null )
+            while (iterator != null)
             {
                 dict.Add(index++, iterator);
                 iterator = iterator.next;
@@ -93,7 +87,7 @@ namespace LeetCodeChallenges.Medium
         public static ListNode TestData2()
         {
             var head = new ListNode { val = 1 };
-           
+
             return head;
         }
         public static ListNode TestDataExpected2()
@@ -104,13 +98,13 @@ namespace LeetCodeChallenges.Medium
         {
             var head = new ListNode { val = 1 };
             head.next = new ListNode { val = 2 };
-           
+
             return head;
         }
         public static ListNode TestDataExpected3()
         {
             var head = new ListNode { val = 1 };
-           
+
             return head;
         }
 

@@ -5,7 +5,7 @@ public class Single_Number_
 {
     public int SingleNumber(int[] nums)
     {
-        var found = new HashSet<int>(); 
+        var found = new HashSet<int>();
         for (int i = 0; i < nums.Length; i++)
         {
             if (found.Contains(nums[i]))

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xunit;
+﻿using Xunit;
 
 namespace LeetCodeChallenges.Medium
 {
@@ -17,7 +12,7 @@ namespace LeetCodeChallenges.Medium
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
                 for (int j = 0; j < matrix[i].Length; j++)
-                {               
+                {
                     if (matrix[i][j] == 0)
                     {
                         zeroRows[i] = true;
@@ -46,7 +41,7 @@ namespace LeetCodeChallenges.Medium
         public void SetZeroesTests()
         {
             // var matrix = new[] { new[] { 1, 1, 1 }, new[] { 1, 0, 1 }, new[] { 1, 1, 1 } };
-            var matrix = new[] { new[] { 1, -1000000, 1 }, new[] { 2, 1, 2 }};
+            var matrix = new[] { new[] { 1, -1000000, 1 }, new[] { 2, 1, 2 } };
             // Arrange & act
             SetZeroes(matrix);
 

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LeetCodeChallenges.Medium.LengthOfLongestSubstring
+﻿namespace LeetCodeChallenges.Medium.LengthOfLongestSubstring
 {
     public class Solution
     {
@@ -26,7 +20,7 @@ namespace LeetCodeChallenges.Medium.LengthOfLongestSubstring
                     result = result.Remove(0, result.IndexOf(current) + 1) + current;
                 }
             }
-            if(result.Length> maxLength) maxLength = result.Length; 
+            if (result.Length > maxLength) maxLength = result.Length;
 
             return maxLength;
         }

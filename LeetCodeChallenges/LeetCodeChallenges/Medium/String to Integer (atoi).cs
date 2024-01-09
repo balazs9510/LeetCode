@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 using Xunit;
 
 namespace LeetCodeChallenges.Medium
@@ -36,11 +32,11 @@ namespace LeetCodeChallenges.Medium
                 if (iterator >= s.Length) break;
                 digit = s[iterator];
             }
-            
+
             var stringResult = sb.ToString().TrimStart('0');
             if (stringResult.Length > 10)
             {
-               return isNegative ? int.MinValue : int.MaxValue;
+                return isNegative ? int.MinValue : int.MaxValue;
             }
             if (iterator == 0 || stringResult.Length == 0) return 0;
             long result = long.Parse(stringResult);

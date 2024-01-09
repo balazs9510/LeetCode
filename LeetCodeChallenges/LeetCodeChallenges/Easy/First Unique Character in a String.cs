@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xunit;
+﻿using Xunit;
 
 namespace LeetCodeChallenges.Easy;
 
@@ -22,7 +17,7 @@ public class First_Unique_Character_in_a_String
             }
             else
             {
-               dict.Add(current, 1);
+                dict.Add(current, 1);
             }
         }
 

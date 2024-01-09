@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 using Xunit;
 
 namespace LeetCodeChallenges.Hard
@@ -12,7 +8,7 @@ namespace LeetCodeChallenges.Hard
         public string GetPermutation(int n, int k)
         {
             var sb = new StringBuilder();
-            var numbers = Enumerable.Range(1, n).ToList(); 
+            var numbers = Enumerable.Range(1, n).ToList();
             var index = 0;
             var l = 0;
             while (sb.Length != n)

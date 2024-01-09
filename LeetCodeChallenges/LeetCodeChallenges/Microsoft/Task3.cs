@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xunit;
+﻿using Xunit;
 
 namespace LeetCodeChallenges.Microsoft
 {
@@ -34,7 +29,7 @@ namespace LeetCodeChallenges.Microsoft
                 var diagram = S[i].ToString() + S[i + 1];
                 if (dict.ContainsKey(diagram))
                 {
-                    var dist = i -dict[diagram] ;
+                    var dist = i - dict[diagram];
                     if (dist > maxDist)
                         maxDist = dist;
                 }

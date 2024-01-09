@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xunit;
+﻿using Xunit;
 
 namespace LeetCodeChallenges.Medium
 {
@@ -57,7 +52,7 @@ namespace LeetCodeChallenges.Medium
         {
             SmallestInfiniteSet smallestInfiniteSet = new SmallestInfiniteSet();
             smallestInfiniteSet.AddBack(2);    // 2 is already in the set, so no change is made.
-            Assert.Equal(1,smallestInfiniteSet.PopSmallest()); // return 1, since 1 is the smallest number, and remove it from the set.
+            Assert.Equal(1, smallestInfiniteSet.PopSmallest()); // return 1, since 1 is the smallest number, and remove it from the set.
             Assert.Equal(2, smallestInfiniteSet.PopSmallest()); // return 2, and remove it from the set.
             Assert.Equal(3, smallestInfiniteSet.PopSmallest()); // return 3, and remove it from the set.
             smallestInfiniteSet.AddBack(1);    // 1 is added back to the set.
@@ -71,16 +66,16 @@ namespace LeetCodeChallenges.Medium
         public void SmallestInfiniteSetTest2()
         {
             SmallestInfiniteSet smallestInfiniteSet = new SmallestInfiniteSet();
-            smallestInfiniteSet.AddBack(2);   
-            Assert.Equal(1, smallestInfiniteSet.PopSmallest()); 
-            Assert.Equal(2, smallestInfiniteSet.PopSmallest()); 
-            Assert.Equal(3, smallestInfiniteSet.PopSmallest()); 
+            smallestInfiniteSet.AddBack(2);
+            Assert.Equal(1, smallestInfiniteSet.PopSmallest());
+            Assert.Equal(2, smallestInfiniteSet.PopSmallest());
+            Assert.Equal(3, smallestInfiniteSet.PopSmallest());
             smallestInfiniteSet.AddBack(1);
-            smallestInfiniteSet.AddBack(3); 
+            smallestInfiniteSet.AddBack(3);
             Assert.Equal(1, smallestInfiniteSet.PopSmallest());
             Assert.Equal(3, smallestInfiniteSet.PopSmallest());
-            Assert.Equal(4, smallestInfiniteSet.PopSmallest()); 
-            Assert.Equal(5, smallestInfiniteSet.PopSmallest()); 
+            Assert.Equal(4, smallestInfiniteSet.PopSmallest());
+            Assert.Equal(5, smallestInfiniteSet.PopSmallest());
         }
 
 
