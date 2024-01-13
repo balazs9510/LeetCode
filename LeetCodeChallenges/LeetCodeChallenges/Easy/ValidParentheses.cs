@@ -1,40 +1,24 @@
-﻿namespace LeetCodeChallenges.Easy
+﻿using Xunit;
+
+namespace LeetCodeChallenges.Easy
 {
-    public partial class EasySolution
+    public class ValidParentheses
     {
-        public bool IsValidParentheses(string s)
+        private static readonly Dictionary<char, char> MatchingOpeningLookUp = new Dictionary<char, char> { { ')', '(' }, { ']', '[' }, { '}', '{' } };
+
+        public bool IsValid(string s)
         {
             Stack<char> stack = new Stack<char>();
-            for (int i = 0; i < s.Length; i++)
+            stack.Push(s[0]);
+
+            for (int i = 1; i < s.Length; i++)
             {
-                char current = s[i];
-                if (IsOpening(current))
-                {
-                    stack.Push(current);
-                }
-                else
-                {
-                    if (stack.Count == 0) return false;
-                    char toCheck = stack.Pop();
-                    if (GetClosing(toCheck) != current)
-                    {
-                        return false;
-                    }
-                }
+                if (IsOpening(s[i])) stack.Push(s[i]);
+                else if (stack.Count > 0 && stack.Peek() == MatchingOpeningLookUp[s[i]]) stack.Pop();
+                else return false;
             }
+
             return stack.Count == 0;
-        }
-
-
-        private char GetClosing(char c)
-        {
-            switch (c)
-            {
-                case '(': return ')';
-                case '[': return ']';
-                case '{': return '}';
-            }
-            throw new ArgumentOutOfRangeException();
         }
 
         private bool IsOpening(char c)
@@ -42,13 +26,19 @@
             return c == '(' || c == '[' || c == '{';
         }
 
-        public static void IsValidParenthesesTests()
+        [Theory]
+        [InlineData("()", true)]
+        [InlineData("()[]{}", true)]
+        [InlineData("(]", false)]
+        public void IsValidParenthesesTests(string s, bool expected)
         {
-            //Console.WriteLine(Instance.IsValidParentheses("()"));
-            //Console.WriteLine(Instance.IsValidParentheses("()[]{}"));
-            //Console.WriteLine(Instance.IsValidParentheses("(]"));
-            //Console.WriteLine(Instance.IsValidParentheses("({{[[]]{}}])"));
-            //Console.WriteLine(Instance.IsValidParentheses("()("));
+            // Arrange
+            // Act
+            var result = IsValid(s);
+
+            // Assert
+            Assert.Equal(expected, result);
         }
+
     }
 }
