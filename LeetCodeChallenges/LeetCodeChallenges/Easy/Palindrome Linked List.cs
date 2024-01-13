@@ -1,23 +1,45 @@
 ﻿using Xunit;
+using LeetCodeChallenges.Utils;
 
 namespace LeetCodeChallenges.Easy;
 
 public class Palindrome_Linked_List
 {
 
-    public class ListNode
+    // O(n) time, O(1) space with reversal
+    public bool IsPalindrome(ListNode head)
     {
-        public int val;
-        public ListNode next;
-        public ListNode(int val = 0, ListNode next = null)
+        var fast = head; var slow = head;
+        // move slow to middle
+        while (fast is not null && fast.next is not null)
         {
-            this.val = val;
-            this.next = next;
+            fast = fast.next.next;
+            slow = slow.next;
         }
+        ListNode prev = null;
+        // move slow to end and create a reversed list
+        while (slow is not null)
+        {
+            var temp = slow.next;
+            slow.next = prev;
+            prev = slow;
+            slow = temp;
+        }
+
+        fast = head; slow = prev;
+        while (slow is not null)
+        {
+            if (slow.val != fast.val) return false;
+            slow = slow.next;
+            fast = fast.next;
+        }
+
+        return true;
     }
 
+
     // O(n) time, O(n) space
-    public bool IsPalindrome(ListNode head)
+    public bool IsPalindromeMyWay(ListNode head)
     {
         var iterator = head;
         var stack = new Stack<int>();
