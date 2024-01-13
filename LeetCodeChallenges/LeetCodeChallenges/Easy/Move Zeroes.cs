@@ -29,7 +29,7 @@ public class Move_Zeroes
 
     // Double array solutin
     // O(n) time, O(n) aux. space
-    public void MoveZeroesTwoCopies(int[] nums)
+    private void MoveZeroesTwoCopies(int[] nums)
     {
         // try one
         int[] newNums = new int[nums.Length];
