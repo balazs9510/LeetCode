@@ -16,4 +16,14 @@ public static class AssertUtils
         Assert.Null(result);
         Assert.Null(expected);
     }
+
+    public static void AssertTwoListIsEqual<T>(List<T> expected, List<T> result)
+    {
+        Assert.Equal(expected.Count, result.Count);
+
+        for (int i = 0; i < expected.Count; i++)
+        {
+            Assert.Equal(expected[i], result[i]);
+        }
+    }
 }
