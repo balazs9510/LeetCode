@@ -1,4 +1,5 @@
-﻿using Xunit;
+﻿using LeetCodeChallenges.Easy;
+using Xunit;
 
 namespace LeetCodeChallenges.Utils;
 
@@ -25,5 +26,13 @@ public static class AssertUtils
         {
             Assert.Equal(expected[i], result[i]);
         }
+    }
+
+    public static void AssertBinaryTreeEqual(TreeNode expected, TreeNode result)
+    {
+        var algo = new Binary_Tree_Inorder_Traversal();
+        var expectedList = algo.InorderTraversal(expected).ToList();
+        var resultList = algo.InorderTraversal(result).ToList();
+        AssertTwoListIsEqual(expectedList, resultList);
     }
 }
