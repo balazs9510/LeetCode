@@ -8,23 +8,43 @@ namespace LeetCodeChallenges.Easy
         public IList<int> InorderTraversal(TreeNode root)
         {
             var result = new List<int>();
-            if (root is not null)
-                InorderTraversalRec(root, result);
+            var stack = new Stack<TreeNode>();
+            var iterator = root;
+            while (iterator != null || stack.Count > 0)
+            {
+                while (iterator != null)
+                {
+                    stack.Push(iterator);
+                    iterator = iterator.left;
+                }
+
+                iterator = stack.Pop();
+                result.Add(iterator.val);
+                iterator = iterator.right;
+            }
             return result;
         }
 
-        private void InorderTraversalRec(TreeNode node, IList<int> resultList)
+        public IList<int> InorderTraversalRec(TreeNode root)
+        {
+            var result = new List<int>();
+            if (root is not null)
+                InorderTraversalRecStep(root, result);
+            return result;
+        }
+
+        private void InorderTraversalRecStep(TreeNode node, IList<int> resultList)
         {
             if (node.left is not null)
             {
-                InorderTraversalRec(node.left, resultList);
+                InorderTraversalRecStep(node.left, resultList);
             }
 
             resultList.Add(node.val);
 
             if (node.right is not null)
             {
-                InorderTraversalRec(node.right, resultList);
+                InorderTraversalRecStep(node.right, resultList);
             }
         }
 
