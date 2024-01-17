@@ -1,28 +1,52 @@
 ﻿using Xunit;
+using LeetCodeChallenges.Utils;
 
 namespace LeetCodeChallenges.Easy
 {
+    public record LevelDecorator(TreeNode node, int level);
+    //    : TreeNode
+    //{
+    //    public readonly TreeNode node;
+    //    public readonly int level;
+
+    //    public LevelDecorator(TreeNode node, int level)
+    //    {
+    //        this.node = node;
+    //        this.level = level;
+    //    }
+    //};
 
     public class Maximum_Depth_of_Binary_Tree
     {
-        public class TreeNode
-        {
-            public int val;
-            public TreeNode left;
-            public TreeNode right;
-            public TreeNode(int val = 0, TreeNode left = null, TreeNode right = null)
-            {
-                this.val = val;
-                this.left = left;
-                this.right = right;
-            }
-        }
-
         public int MaxDepth(TreeNode root)
         {
             if (root is null) return 0;
 
-            return MaxDepthRec(root, 1);
+            return MaxDepthIterative(root);
+        }
+
+        public int MaxDepthIterative(TreeNode root)
+        {
+            var stack = new Stack<LevelDecorator>();
+            stack.Push(new LevelDecorator(root, 1));
+            int max = 1;
+            while (stack.Count > 0)
+            {
+                var current = stack.Pop();
+                if (current.level > max) max = current.level;
+
+                if (current.node.right is not null)
+                {
+                    stack.Push(new LevelDecorator(current.node.right, current.level + 1));
+                }
+
+                if (current.node.left is not null)
+                {
+                    stack.Push(new LevelDecorator(current.node.left, current.level + 1));
+                }
+            }
+
+            return max;
         }
 
         public int MaxDepthRec(TreeNode root, int current)
