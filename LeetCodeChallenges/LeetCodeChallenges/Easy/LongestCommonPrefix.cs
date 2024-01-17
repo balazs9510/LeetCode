@@ -1,45 +1,73 @@
-﻿namespace LeetCodeChallenges.Easy
+﻿using System.Text;
+using Xunit;
+
+namespace LeetCodeChallenges.Easy;
+
+public class Longest_Common_Prefix
 {
-    public partial class EasySolution
+    public string LongestCommonPrefix(string[] strs)
     {
-        public string LongestCommonPrefix(string[] strs)
+        var builder = new StringBuilder();
+        //int iterator = 0;
+        //bool check = true;
+        //while (check)
+        //{
+        //    for (int i = 0; i < strs.Length; i++)
+        //    {
+        //        if (strs[i].Length >= iterator)
+        //        {
+        //            check = false;
+        //            break;
+        //        }
+
+        //        if (strs[i].Substring(0, iterator + 1) != builder.ToString()) { check = false; break; }
+        //    }
+        //    builder.Append(strs[0][iterator]);
+        //    iterator++;
+        //}
+
+        return builder.ToString();
+    }
+
+    public string LongestCommonPrefixOld(string[] strs)
+    {
+        int minLength = strs.Select(str => str.Length).Min();
+        string commonPrefix = string.Empty;
+
+        for (int i = 0; i < minLength; i++)
         {
-            int minLength = strs.Select(str => str.Length).Min();
-            string commonPrefix = string.Empty;
+            char current = strs[0][i];
+            bool isMatching = true;
 
-            for (int i = 0; i < minLength; i++)
+            for (int j = 1; j < strs.Length; j++)
             {
-                char current = strs[0][i];
-                bool isMatching = true;
-
-                for (int j = 1; j < strs.Length; j++)
+                if (strs[j][i] != current)
                 {
-                    if (strs[j][i] != current)
-                    {
-                        isMatching = false;
-                        break;
-                    }
-                }
-
-                if (isMatching)
-                {
-                    commonPrefix += current;
-                }
-                else
-                {
+                    isMatching = false;
                     break;
                 }
             }
 
-            return commonPrefix;
+            if (isMatching)
+            {
+                commonPrefix += current;
+            }
+            else
+            {
+                break;
+            }
         }
 
+        return commonPrefix;
+    }
 
-        public static void LongestCommonPrefixTest()
-        {
-            var sol = new EasySolution();
-            Console.WriteLine(sol.LongestCommonPrefix(new string[] { "flower", "flow", "flight" }));
-            Console.WriteLine(sol.LongestCommonPrefix(new string[] { "dog", "racecar", "car" }));
-        }
+
+
+    [Theory]
+    [InlineData(new string[] { "flower", "flow", "flight" }, "fl")]
+    [InlineData(new string[] { "dog", "racecar", "car" }, "")]
+    public void LongestCommonPrefixTests(string[] strs, string expected)
+    {
+        Assert.Equal(expected, LongestCommonPrefix(strs));
     }
 }
