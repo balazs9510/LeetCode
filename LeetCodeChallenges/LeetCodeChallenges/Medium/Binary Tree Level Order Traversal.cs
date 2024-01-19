@@ -1,19 +1,8 @@
 ﻿using Xunit;
+using LeetCodeChallenges.Utils;
 
 namespace LeetCodeChallenges.Medium
 {
-    public class TreeNode
-    {
-        public int val;
-        public TreeNode left;
-        public TreeNode right;
-        public TreeNode(int val = 0, TreeNode left = null, TreeNode right = null)
-        {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
     public class Binary_Tree_Level_Order_Traversal
     {
         public class LeveledNode
