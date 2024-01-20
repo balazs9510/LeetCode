@@ -1,0 +1,26 @@
+﻿using Xunit;
+
+namespace {namespace};
+
+public class {itemname}
+{
+        $
+
+        [Theory]
+        [InlineData()]
+        public void Tests()
+        {
+            // Arrange
+            // Act
+            // Assert
+
+        }
+
+        [Fact]
+        public void Test()
+        {
+            // Arrange
+            // Act
+            // Assert
+        }
+}
