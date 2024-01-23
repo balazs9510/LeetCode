@@ -22,4 +22,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\LeetCodeChallenges\LeetCodeChallenges.csproj" />
+  </ItemGroup>
+
 </Project>

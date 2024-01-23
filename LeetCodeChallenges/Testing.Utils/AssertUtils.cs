@@ -1,7 +1,4 @@
-﻿using LeetCodeChallenges.Easy;
-using Xunit;
-
-namespace LeetCodeChallenges.Utils;
+﻿namespace LeetCodeChallenges.Utils;
 
 public static class AssertUtils
 {
@@ -17,8 +14,6 @@ public static class AssertUtils
         Assert.Null(result);
         Assert.Null(expected);
     }
-
-    public static void AssertTwoArraysIsEqual(int[] expected, int[] result) => AssertTwoListIsEqual(expected.ToList(), result.ToList());
 
     public static void AssertTwoListIsEqual<T>(List<T> expected, List<T> result)
     {
