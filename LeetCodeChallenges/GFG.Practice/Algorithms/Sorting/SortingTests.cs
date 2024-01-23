@@ -51,6 +51,20 @@ public class SortingTests
     }
 
 
+    [Theory]
+    [MemberData(nameof(SortingTestData))]
+    public void MergeSortTests(int[] nums, int[] expected)
+    {
+        // Arrange
+        var sorter = new MergeSort();
+
+        // Act
+        var result = sorter.Sort(nums);
+
+        // Assert
+        AssertUtils.AssertTwoArraysIsEqual(expected, result);
+    }
+
     //public static List<Type> SortingStrategies = new List<Type> { typeof(BubbleSort),  typeof(SelectionSort) };
 
     //public static IEnumerable<object[]> ComplexTestData => SortingStrategies.SelectMany()
