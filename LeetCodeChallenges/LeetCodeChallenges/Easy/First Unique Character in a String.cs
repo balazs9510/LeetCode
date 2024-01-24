@@ -6,30 +6,46 @@ public class First_Unique_Character_in_a_String
 {
     public int FirstUniqChar(string s)
     {
-        var dict = new Dictionary<char, int>();
+        int[] charCounts = new int[26];
         for (int i = 0; i < s.Length; i++)
         {
-            var current = s[i];
-
-            if (dict.ContainsKey(current))
-            {
-                dict[current]++;
-            }
-            else
-            {
-                dict.Add(current, 1);
-            }
+            charCounts[s[i] - 'a']++;
         }
 
         for (int i = 0; i < s.Length; i++)
         {
-            var current = s[i];
-
-            if (dict[current] == 1) return i;
+            if (charCounts[s[i] - 'a'] == 1) return i;
         }
 
         return -1;
     }
+
+    //public int FirstUniqChar(string s)
+    //{
+    //    var dict = new Dictionary<char, int>();
+    //    for (int i = 0; i < s.Length; i++)
+    //    {
+    //        var current = s[i];
+
+    //        if (dict.ContainsKey(current))
+    //        {
+    //            dict[current]++;
+    //        }
+    //        else
+    //        {
+    //            dict.Add(current, 1);
+    //        }
+    //    }
+
+    //    for (int i = 0; i < s.Length; i++)
+    //    {
+    //        var current = s[i];
+
+    //        if (dict[current] == 1) return i;
+    //    }
+
+    //    return -1;
+    //}
 
     [Theory]
     [InlineData("leetcode", 0)]
