@@ -65,6 +65,20 @@ public class SortingTests
         AssertUtils.AssertTwoArraysIsEqual(expected, result);
     }
 
+    [Theory]
+    [MemberData(nameof(SortingTestData))]
+    public void QuickSortTests(int[] nums, int[] expected)
+    {
+        // Arrange
+        var sorter = new QuickSort();
+
+        // Act
+        var result = sorter.Sort(nums);
+
+        // Assert
+        AssertUtils.AssertTwoArraysIsEqual(expected, result);
+    }
+
     //public static List<Type> SortingStrategies = new List<Type> { typeof(BubbleSort),  typeof(SelectionSort) };
 
     //public static IEnumerable<object[]> ComplexTestData => SortingStrategies.SelectMany()
