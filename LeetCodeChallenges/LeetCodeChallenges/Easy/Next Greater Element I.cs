@@ -4,9 +4,35 @@ namespace LeetCodeChallenges.Easy;
 
 public class Next_Greater_Element_I
 {
-    // TODO: the problem asks for O(N+M)
-    // O(N*M)
+    // Using monotonic stack
+    // O(N+M)
     public int[] NextGreaterElement(int[] nums1, int[] nums2)
+    {
+        var monoStack = new Stack<int>();
+        var dict = new Dictionary<int, int>();
+        var result = new int[nums1.Length];
+        for (int i = nums2.Length - 1; i >= 0; i--)
+        {
+            var num = nums2[i];
+            while (monoStack.Count > 0 && monoStack.Peek() <= num)
+            {
+                monoStack.Pop();
+            }
+
+            dict.Add(num, monoStack.Count > 0 ? monoStack.Peek() : -1); // save the greatest before adding 
+            monoStack.Push(num);
+        }
+
+        for (int i = 0; i < nums1.Length; i++)
+        {
+            result[i] = dict[nums1[i]];
+        }
+
+        return result;
+    }
+
+    // O(N*M)
+    public int[] NextGreaterElement1(int[] nums1, int[] nums2)
     {
         int[] result = new int[nums1.Length];
         for (int i = 0; i < nums1.Length; i++)
