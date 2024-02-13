@@ -18,6 +18,13 @@ public static class AssertUtils
         Assert.Null(expected);
     }
 
+    public static void AssertTwoArraysIsEqualWithoutOrder(int[] expected, int[] result)
+    {
+        Array.Sort(expected);
+        Array.Sort(result);
+        AssertTwoListIsEqual(expected.ToList(), result.ToList());
+    }
+
     public static void AssertTwoArraysIsEqual(int[] expected, int[] result) => AssertTwoListIsEqual(expected.ToList(), result.ToList());
 
     public static void AssertTwoListIsEqual<T>(List<T> expected, List<T> result)
